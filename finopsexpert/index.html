@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQWY7XH3RJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-KQWY7XH3RJ', { 'send_page_view': false });
+
+    var destination = 'https://www.linkedin.com/in/stevenodwyer/';
+    var redirected = false;
+
+    function doRedirect() {
+      if (!redirected) {
+        redirected = true;
+        window.location.replace(destination);
+      }
+    }
+
+    gtag('event', 'linkedin_redirect', {
+      'event_category': 'outbound',
+      'event_label': 'finopsexpert.com',
+      'transport_type': 'beacon',
+      'event_callback': doRedirect
+    });
+
+    setTimeout(doRedirect, 1000);
+  </script>
+
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=https://www.linkedin.com/in/stevenodwyer/">
+  </noscript>
+</head>
+<body>
+  <p style="font-family: sans-serif; color: #555; text-align: center; margin-top: 20%;">
+    Redirecting to LinkedIn&hellip;
+  </p>
+  <noscript>
+    <p style="font-family: sans-serif; text-align: center;">
+      <a href="https://www.linkedin.com/in/stevenodwyer/">Click here if you are not redirected automatically.</a>
+    </p>
+  </noscript>
+</body>
+</html>
